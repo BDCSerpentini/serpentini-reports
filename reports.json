@@ -2026,118 +2026,6 @@
           "cta": 91.0
         },
         {
-          "location": "CDJR",
-          "campaign": "Day 1",
-          "sent": 357.0,
-          "opens": 119.0,
-          "cta": 45.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Day 2",
-          "sent": 459.0,
-          "opens": 138.0,
-          "cta": 11.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Day 3",
-          "sent": 441.0,
-          "opens": 137.0,
-          "cta": 25.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Day 5",
-          "sent": 390.0,
-          "opens": 118.0,
-          "cta": 8.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Day 7",
-          "sent": 0.0,
-          "opens": 0.0,
-          "cta": 0.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Lease Renewal",
-          "sent": 0.0,
-          "opens": 0.0,
-          "cta": 4.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Anniversary",
-          "sent": 260.0,
-          "opens": 112.0,
-          "cta": 4.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Credit App",
-          "sent": 14.0,
-          "opens": 5.0,
-          "cta": 3.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "KBB",
-          "sent": 180.0,
-          "opens": 63.0,
-          "cta": 2.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Appointment",
-          "sent": 0.0,
-          "opens": 0.0,
-          "cta": 0.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Salesperson",
-          "sent": 1.0,
-          "opens": 1.0,
-          "cta": 1.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Still Interested",
-          "sent": 2.0,
-          "opens": 0.0,
-          "cta": 9.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Birthday",
-          "sent": 0.0,
-          "opens": 0.0,
-          "cta": 4.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Blank",
-          "sent": 0.0,
-          "opens": 0.0,
-          "cta": 7.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "BDM Thank You",
-          "sent": 13.0,
-          "opens": 5.0,
-          "cta": 0.0
-        },
-        {
-          "location": "CDJR",
-          "campaign": "Location Total",
-          "sent": 2117.0,
-          "opens": 698.0,
-          "cta": 119.0
-        },
-        {
           "location": "Orrville",
           "campaign": "Day 1",
           "sent": 620,
@@ -2248,6 +2136,118 @@
           "sent": 2637,
           "opens": 995,
           "cta": 26.0
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Day 1",
+          "sent": 518,
+          "opens": 199,
+          "cta": 45
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Day 2",
+          "sent": 466,
+          "opens": 142,
+          "cta": 11
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Day 3",
+          "sent": 442,
+          "opens": 139,
+          "cta": 25
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Day 5",
+          "sent": 394,
+          "opens": 120,
+          "cta": 8
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Day 7",
+          "sent": 1,
+          "opens": 1,
+          "cta": 0
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Lease Renewal",
+          "sent": 0,
+          "opens": 0,
+          "cta": 4
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Anniversary",
+          "sent": 260,
+          "opens": 114,
+          "cta": 4
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Credit App",
+          "sent": 27,
+          "opens": 11,
+          "cta": 3
+        },
+        {
+          "location": "CDJR",
+          "campaign": "KBB",
+          "sent": 181,
+          "opens": 64,
+          "cta": 2
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Appointment",
+          "sent": 1,
+          "opens": 1,
+          "cta": 0
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Salesperson",
+          "sent": 1,
+          "opens": 1,
+          "cta": 1
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Still Interested",
+          "sent": 2,
+          "opens": 0,
+          "cta": 9
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Birthday",
+          "sent": 190,
+          "opens": 90,
+          "cta": 4
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Blank",
+          "sent": 8,
+          "opens": 5,
+          "cta": 7
+        },
+        {
+          "location": "CDJR",
+          "campaign": "BDM Thank You",
+          "sent": 13,
+          "opens": 5,
+          "cta": 0
+        },
+        {
+          "location": "CDJR",
+          "campaign": "Location Total",
+          "sent": 2504,
+          "opens": 892,
+          "cta": 119
         }
       ],
       "volie": [
