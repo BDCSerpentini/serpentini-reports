@@ -3185,112 +3185,112 @@
           "campaign": "Day 1",
           "sent": 810,
           "opens": 323,
-          "cta": 41.0
+          "cta": 41
         },
         {
           "location": "CDJR",
           "campaign": "Day 2",
           "sent": 680,
           "opens": 207,
-          "cta": 28.0
+          "cta": 28
         },
         {
           "location": "CDJR",
           "campaign": "Day 3",
           "sent": 607,
           "opens": 207,
-          "cta": 30.0
+          "cta": 30
         },
         {
           "location": "CDJR",
           "campaign": "Day 5",
           "sent": 539,
           "opens": 164,
-          "cta": 23.0
+          "cta": 23
         },
         {
           "location": "CDJR",
           "campaign": "Day 7",
           "sent": 1,
           "opens": 0,
-          "cta": 0.0
+          "cta": 0
         },
         {
           "location": "CDJR",
           "campaign": "Lease Renewal",
           "sent": 3,
           "opens": 2,
-          "cta": 6.0
+          "cta": 6
         },
         {
           "location": "CDJR",
           "campaign": "Anniversary",
           "sent": 293,
-          "opens": 125,
-          "cta": 2.0
+          "opens": 126,
+          "cta": 2
         },
         {
           "location": "CDJR",
           "campaign": "Credit App",
           "sent": 19,
           "opens": 5,
-          "cta": 8.0
+          "cta": 8
         },
         {
           "location": "CDJR",
           "campaign": "KBB",
           "sent": 164,
           "opens": 82,
-          "cta": 4.0
+          "cta": 4
         },
         {
           "location": "CDJR",
           "campaign": "Appointment",
           "sent": 1,
           "opens": 1,
-          "cta": 0.0
+          "cta": 0
         },
         {
           "location": "CDJR",
           "campaign": "Salesperson",
           "sent": 2,
           "opens": 2,
-          "cta": 0.0
+          "cta": 0
         },
         {
           "location": "CDJR",
           "campaign": "Still Interested",
           "sent": 1,
           "opens": 0,
-          "cta": 0.0
+          "cta": 0
         },
         {
           "location": "CDJR",
           "campaign": "Birthday",
           "sent": 175,
           "opens": 80,
-          "cta": 6.0
+          "cta": 6
         },
         {
           "location": "CDJR",
           "campaign": "Blank",
           "sent": 6,
           "opens": 2,
-          "cta": 0.0
+          "cta": 0
         },
         {
           "location": "CDJR",
           "campaign": "BDM Thank You",
           "sent": 6,
           "opens": 2,
-          "cta": 0.0
+          "cta": 0
         },
         {
           "location": "CDJR",
           "campaign": "Location Total",
           "sent": 3307,
-          "opens": 1202,
-          "cta": 139.0
+          "opens": 1203,
+          "cta": 139
         }
       ],
       "volie": [
