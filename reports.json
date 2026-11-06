@@ -3046,6 +3046,56 @@
             }
           ]
         }
+      ],
+      "automations": [
+        {
+          "location": "Westlake",
+          "messaged": 781,
+          "engaged": 311,
+          "replyRate": 0.4,
+          "influenced": 58,
+          "bestCampaign": "Price Drop"
+        },
+        {
+          "location": "Willoughby",
+          "messaged": 612,
+          "engaged": 317,
+          "replyRate": 0.52,
+          "influenced": 46,
+          "bestCampaign": "Price Drop (Copy)"
+        },
+        {
+          "location": "Tallmadge",
+          "messaged": 521,
+          "engaged": 250,
+          "replyRate": 0.48,
+          "influenced": 42,
+          "bestCampaign": "Price Drop (Copy)"
+        },
+        {
+          "location": "Strongsville",
+          "messaged": 780,
+          "engaged": 401,
+          "replyRate": 0.51,
+          "influenced": 41,
+          "bestCampaign": "Missed appointments"
+        },
+        {
+          "location": "Medina",
+          "messaged": 549,
+          "engaged": 217,
+          "replyRate": 0.39,
+          "influenced": 24,
+          "bestCampaign": "Price Drop"
+        },
+        {
+          "location": "Orrville",
+          "messaged": 226,
+          "engaged": 81,
+          "replyRate": 0.36,
+          "influenced": 8,
+          "bestCampaign": "Missed appointment"
+        }
       ]
     },
     "2026-10": {
