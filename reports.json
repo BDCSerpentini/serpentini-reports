@@ -3096,6 +3096,56 @@
           "influenced": 8,
           "bestCampaign": "Missed appointment"
         }
+      ],
+      "broadcasts": [
+        {
+          "location": "Westlake",
+          "broadcasts": 10,
+          "messaged": 415,
+          "replyRate": 0.27,
+          "influenced": 31,
+          "topCampaign": "Warm Local Leads Aug 20 - Sep 5"
+        },
+        {
+          "location": "Tallmadge",
+          "broadcasts": 7,
+          "messaged": 332,
+          "replyRate": 0.32,
+          "influenced": 23,
+          "topCampaign": "Missed Appts Aug 30 - Sep 5"
+        },
+        {
+          "location": "Strongsville",
+          "broadcasts": 8,
+          "messaged": 719,
+          "replyRate": 0.22,
+          "influenced": 21,
+          "topCampaign": "Sep 1-20 leads | Lease Specials"
+        },
+        {
+          "location": "Medina",
+          "broadcasts": 7,
+          "messaged": 237,
+          "replyRate": 0.33,
+          "influenced": 19,
+          "topCampaign": "Medina Local Leads Aug 20 - Sep 10"
+        },
+        {
+          "location": "Willoughby",
+          "broadcasts": 8,
+          "messaged": 360,
+          "replyRate": 0.31,
+          "influenced": 18,
+          "topCampaign": "Warm Local Leads Sep 1-23"
+        },
+        {
+          "location": "Orrville",
+          "broadcasts": 1,
+          "messaged": 26,
+          "replyRate": 0.19,
+          "influenced": 0,
+          "topCampaign": "Missed Appts 23-29"
+        }
       ]
     },
     "2026-10": {
