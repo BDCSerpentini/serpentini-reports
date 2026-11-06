@@ -1250,6 +1250,386 @@
           "clicks": 71.0,
           "users": 27.0
         }
+      ],
+      "bdcAgents": [
+        {
+          "id": "bdc_001",
+          "name": "Denise",
+          "messages": 927,
+          "customers": 516,
+          "handoffs": 315,
+          "handoffReplyRate": 0.14,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Medina",
+          "locations": [
+            {
+              "location": "Medina",
+              "messages": 927,
+              "customers": 516,
+              "handoffs": 315
+            }
+          ]
+        },
+        {
+          "id": "bdc_002",
+          "name": "Jerm",
+          "messages": 675,
+          "customers": 427,
+          "handoffs": 325,
+          "handoffReplyRate": 0.1,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Tallmadge",
+          "locations": [
+            {
+              "location": "Tallmadge",
+              "messages": 675,
+              "customers": 427,
+              "handoffs": 325
+            }
+          ]
+        },
+        {
+          "id": "bdc_003",
+          "name": "JP",
+          "messages": 835,
+          "customers": 532,
+          "handoffs": 315,
+          "handoffReplyRate": 0.16,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Strongsville",
+          "locations": [
+            {
+              "location": "Strongsville",
+              "messages": 835,
+              "customers": 532,
+              "handoffs": 315
+            }
+          ]
+        },
+        {
+          "id": "bdc_004",
+          "name": "Tina",
+          "messages": 2638,
+          "customers": 1261,
+          "handoffs": 558,
+          "handoffReplyRate": 0.29,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Tallmadge",
+          "locations": [
+            {
+              "location": "Tallmadge",
+              "messages": 2638,
+              "customers": 1261,
+              "handoffs": 558
+            }
+          ]
+        },
+        {
+          "id": "bdc_005",
+          "name": "Courtny",
+          "messages": 1355,
+          "customers": 819,
+          "handoffs": 476,
+          "handoffReplyRate": 0.18,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Westlake",
+          "locations": [
+            {
+              "location": "Westlake",
+              "messages": 1355,
+              "customers": 819,
+              "handoffs": 476
+            }
+          ]
+        },
+        {
+          "id": "bdc_006",
+          "name": "Seese",
+          "messages": 1820,
+          "customers": 849,
+          "handoffs": 335,
+          "handoffReplyRate": 0.17,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Strongsville",
+          "locations": [
+            {
+              "location": "Strongsville",
+              "messages": 1820,
+              "customers": 849,
+              "handoffs": 335
+            }
+          ]
+        },
+        {
+          "id": "bdc_007",
+          "name": "Dylan",
+          "messages": 720,
+          "customers": 351,
+          "handoffs": 276,
+          "handoffReplyRate": 0.17,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Strongsville",
+          "locations": [
+            {
+              "location": "Strongsville",
+              "messages": 720,
+              "customers": 351,
+              "handoffs": 276
+            }
+          ]
+        },
+        {
+          "id": "bdc_008",
+          "name": "Ashley",
+          "messages": 609,
+          "customers": 375,
+          "handoffs": 290,
+          "handoffReplyRate": 0.14,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Willoughby Hills",
+          "locations": [
+            {
+              "location": "Willoughby Hills",
+              "messages": 609,
+              "customers": 375,
+              "handoffs": 290
+            }
+          ]
+        },
+        {
+          "id": "bdc_009",
+          "name": "Carolyn",
+          "messages": 617,
+          "customers": 348,
+          "handoffs": 185,
+          "handoffReplyRate": 0.28,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Tallmadge",
+          "locations": [
+            {
+              "location": "Tallmadge",
+              "messages": 617,
+              "customers": 348,
+              "handoffs": 185
+            }
+          ]
+        },
+        {
+          "id": "bdc_010",
+          "name": "Fry",
+          "messages": 788,
+          "customers": 470,
+          "handoffs": 371,
+          "handoffReplyRate": 0.11,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Tallmadge",
+          "locations": [
+            {
+              "location": "Tallmadge",
+              "messages": 788,
+              "customers": 470,
+              "handoffs": 371
+            }
+          ]
+        },
+        {
+          "id": "bdc_011",
+          "name": "Samantha",
+          "messages": 853,
+          "customers": 732,
+          "handoffs": 591,
+          "handoffReplyRate": 0.1,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Tallmadge",
+          "locations": [
+            {
+              "location": "Tallmadge",
+              "messages": 853,
+              "customers": 732,
+              "handoffs": 591
+            }
+          ]
+        },
+        {
+          "id": "bdc_012",
+          "name": "Tori",
+          "messages": 626,
+          "customers": 319,
+          "handoffs": 311,
+          "handoffReplyRate": 0.16,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Medina",
+          "locations": [
+            {
+              "location": "Medina",
+              "messages": 626,
+              "customers": 319,
+              "handoffs": 311
+            }
+          ]
+        },
+        {
+          "id": "bdc_013",
+          "name": "Ang",
+          "messages": 1805,
+          "customers": 764,
+          "handoffs": 447,
+          "handoffReplyRate": 0.19,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Strongsville",
+          "locations": [
+            {
+              "location": "Strongsville",
+              "messages": 1805,
+              "customers": 764,
+              "handoffs": 447
+            }
+          ]
+        },
+        {
+          "id": "bdc_014",
+          "name": "Quan",
+          "messages": 511,
+          "customers": 363,
+          "handoffs": 204,
+          "handoffReplyRate": 0.15,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Medina",
+          "locations": [
+            {
+              "location": "Medina",
+              "messages": 511,
+              "customers": 363,
+              "handoffs": 204
+            }
+          ]
+        },
+        {
+          "id": "bdc_015",
+          "name": "Briana",
+          "messages": 46,
+          "customers": 35,
+          "handoffs": 74,
+          "handoffReplyRate": 0.09,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Strongsville",
+          "locations": [
+            {
+              "location": "Strongsville",
+              "messages": 46,
+              "customers": 35,
+              "handoffs": 74
+            }
+          ]
+        },
+        {
+          "id": "bdc_016",
+          "name": "Jonathan",
+          "messages": 0,
+          "customers": 0,
+          "handoffs": 3,
+          "handoffReplyRate": 0.0,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": null,
+          "locations": [
+            {
+              "location": "Westlake",
+              "messages": 0,
+              "customers": 0,
+              "handoffs": 3
+            }
+          ]
+        },
+        {
+          "id": "bdc_017",
+          "name": "Kody",
+          "messages": 1049,
+          "customers": 590,
+          "handoffs": 370,
+          "handoffReplyRate": 0.18,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Westlake",
+          "locations": [
+            {
+              "location": "Westlake",
+              "messages": 1049,
+              "customers": 590,
+              "handoffs": 370
+            }
+          ]
+        },
+        {
+          "id": "bdc_018",
+          "name": "Corey",
+          "messages": 874,
+          "customers": 779,
+          "handoffs": 201,
+          "handoffReplyRate": 0.1,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Strongsville",
+          "locations": [
+            {
+              "location": "Strongsville",
+              "messages": 874,
+              "customers": 779,
+              "handoffs": 201
+            }
+          ]
+        },
+        {
+          "id": "bdc_019",
+          "name": "Noah",
+          "messages": 768,
+          "customers": 414,
+          "handoffs": 279,
+          "handoffReplyRate": 0.14,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Medina",
+          "locations": [
+            {
+              "location": "Medina",
+              "messages": 768,
+              "customers": 414,
+              "handoffs": 279
+            }
+          ]
+        },
+        {
+          "id": "bdc_020",
+          "name": "Justin",
+          "messages": 448,
+          "customers": 275,
+          "handoffs": 154,
+          "handoffReplyRate": 0.27,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Tallmadge",
+          "locations": [
+            {
+              "location": "Tallmadge",
+              "messages": 448,
+              "customers": 275,
+              "handoffs": 154
+            }
+          ]
+        },
+        {
+          "id": "bdc_021",
+          "name": "Ray",
+          "messages": 798,
+          "customers": 412,
+          "handoffs": 115,
+          "handoffReplyRate": 0.3,
+          "replyRateEstimated": false,
+          "mostMessagedLocation": "Westlake",
+          "locations": [
+            {
+              "location": "Westlake",
+              "messages": 798,
+              "customers": 412,
+              "handoffs": 115
+            }
+          ]
+        }
       ]
     },
     "2026-09": {
