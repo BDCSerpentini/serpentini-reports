@@ -1680,6 +1680,56 @@
           "influenced": 15,
           "bestCampaign": "Missed appointment"
         }
+      ],
+      "broadcasts": [
+        {
+          "location": "Westlake",
+          "broadcasts": 6,
+          "messaged": 397,
+          "replyRate": 0.27,
+          "influenced": 17,
+          "topCampaign": "WL Warm Local Leads Jul16-Aug4"
+        },
+        {
+          "location": "Strongsville",
+          "broadcasts": 6,
+          "messaged": 548,
+          "replyRate": 0.2,
+          "influenced": 15,
+          "topCampaign": "Warm Local Leads Aug 1-11"
+        },
+        {
+          "location": "Willoughby",
+          "broadcasts": 5,
+          "messaged": 298,
+          "replyRate": 0.2,
+          "influenced": 5,
+          "topCampaign": "July 2026 Cold Leads"
+        },
+        {
+          "location": "Medina",
+          "broadcasts": 6,
+          "messaged": 287,
+          "replyRate": 0.21,
+          "influenced": 4,
+          "topCampaign": "Warm Local Jul16-31"
+        },
+        {
+          "location": "Tallmadge",
+          "broadcasts": 5,
+          "messaged": 311,
+          "replyRate": 0.2,
+          "influenced": 2,
+          "topCampaign": "Warm Local Leads July 16-31"
+        },
+        {
+          "location": "Orrville",
+          "broadcasts": null,
+          "messaged": 0,
+          "replyRate": null,
+          "influenced": 0,
+          "topCampaign": null
+        }
       ]
     },
     "2026-09": {
