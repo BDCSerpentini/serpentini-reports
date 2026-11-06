@@ -1,0 +1,1 @@
+Email Marketing UI update: four KPIs, dealership/campaign ranking, monthly trend, campaign volume composition, and detailed table. Based on Matador AI redesign baseline. No reports.json is included or modified.
