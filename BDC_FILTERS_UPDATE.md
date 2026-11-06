@@ -1,0 +1,1 @@
+BDC Agents now uses the header Year, Quarter, Period and Dealership filters. The extra BDC month and dealership selectors were removed. Do not overwrite reports.json. Historical July fallback remains until July BDC data is published. Quarter metrics aggregate available months and label weighted reply rates as estimates.
