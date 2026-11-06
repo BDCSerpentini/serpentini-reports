@@ -669,7 +669,7 @@ function mcPeriodView(){
  let byPeriodAcrossLocations=mcSeriesClean(periods.map((p,i)=>({name:cats[i],values:names.map(n=>mcValue(mcGet(n,mcPeriodMonths(p)),mcBreakdownMetric))})));
  let donutRows=periods.flatMap((p,i)=>names.map(n=>{let r=mcGet(n,mcPeriodMonths(p));return r.da&&r.di!=null?{...r,name:`${cats[i]} · ${n}`} : null}).filter(Boolean));
  let figureRows=periods.flatMap((p,i)=>names.map(n=>{let r=mcGet(n,mcPeriodMonths(p));return [cats[i],n,...['dl','de','engaged','da','di','aiPct'].map(k=>mcFmt(k,mcValue(r,k)))]}));
- return `<div class="mc-page mc-modern"><div class="mc-hero"><div><h2>Compare Periods</h2><p>Identify changes over time, without combining dealerships or months.</p></div><span>${periods.length} periods · ${names.length} locations</span></div>${mcControls(false)}${mcCoverage(names,months)}${mcPeriodChangeCards(periods,names)}${mcFrame('Performance over time','A separate dealership-colored series for each selected location. Change the metric using the selector.',mcOption(mcMetric,'mcMetric=this.value'),mcSeriesPlot(cats,perLocMetric,mcMetric,'line'))}<div class="panel mc-detail-panel"><div class="mc-section-head"><div><h2>Period-by-location figures</h2><p>All selected periods and dealerships remain separate.</p></div></div>${mcTable(['Period','Location','Leads','Engaged','Engagement rate','Appointments','AI influenced','AI appointment %'],figureRows)}</div><div class="mc-info">Quarterly rates use underlying summed counts, not averaged monthly percentages. Comparisons include only months with data. Fixed colors identify dealerships throughout the dashboard.</div></div>`;
+ return `<div class="mc-page mc-modern"><div class="mc-hero"><div><h2>Compare Periods</h2><p>Identify changes over time, without combining dealerships or months.</p></div><span>${periods.length} periods · ${names.length} locations</span></div>${mcControls(false)}${mcCoverage(names,months)}${mcPeriodChangeCards(periods,names)}${mcOutreachCompare(periods,names)}${mcFrame('Performance over time','A separate dealership-colored series for each selected location. Change the metric using the selector.',mcOption(mcMetric,'mcMetric=this.value'),mcSeriesPlot(cats,perLocMetric,mcMetric,'line'))}<div class="panel mc-detail-panel"><div class="mc-section-head"><div><h2>Period-by-location figures</h2><p>All selected periods and dealerships remain separate.</p></div></div>${mcTable(['Period','Location','Leads','Engaged','Engagement rate','Appointments','AI influenced','AI appointment %'],figureRows)}</div><div class="mc-info">Quarterly rates use underlying summed counts, not averaged monthly percentages. Comparisons include only months with data. Fixed colors identify dealerships throughout the dashboard.</div></div>`;
 }
 function mcLocationCardMetric(rows,key,label,kind,hoverSent=false){
  return `<article class="mc-mini-metric"><div class="mc-mini-head"><h3>${safe(label)}</h3><span class="mc-mini-kind">${safe(kind)}</span></div><div class="mc-mini-locations">${rows.map((r,i)=>{
@@ -981,6 +981,50 @@ function cobView(){
  <div class="cob-chartpanel"><div class="cob-chart-title">${safe(OB_METRICS[cobMetric][0])} by ${cobLayout==='dealer'?'dealership':'period'}</div><p class="cob-help">${['replyRate','engagementRate','efficiency'].includes(cobMetric)?'Rate comparison · dot/lollipop chart':'Count comparison · horizontal bars'} · ${safe(compareA.replace('-',' '))} vs ${safe(compareB.replace('-',' '))}. Hover over a row for exact values.</p>${cobPlot()}</div>
  ${partial.length?`<div class="cob-note"><b>Partial outreach coverage:</b> ${safe(partial.join('; '))}. Missing months are not zero and periods may not be directly comparable.</div>`:''}
  <div class="cob-note">Reply rates are weighted by customers messaged using Matador's reported dealership reply rate. Engagement rate is customers engaged ÷ customers messaged. Influenced appointments are attributed activity, not necessarily appointments booked directly. Appointments per 100 messaged is an efficiency indicator, not a verified customer conversion rate. Missing locations and months appear as no data. The two outreach types are never combined or deduplicated.</div></section>`;
+}
+
+// Live Compare Periods outreach panel, using the modern multi-period and multi-dealership selectors.
+function mcOutreachCompare(periods,names){
+ const keys=COB_FIELDS[cobKind];if(!keys.includes(cobMetric))cobMetric='influenced';
+ const isPct=['replyRate','engagementRate'].includes(cobMetric),isRate=isPct||cobMetric==='efficiency';
+ const selections=periods.map(id=>({id,label:mcPeriodLabel(id),months:mcPeriodMonths(id)}));
+ function records(selection,dealership){return selection.months.flatMap(m=>(db[m]?.[cobKind]||[]).filter(r=>r.location===dealership));}
+ function figure(rows){
+  if(!rows.length)return null;
+  const valid=rows.filter(r=>r.messaged!=null);
+  if(cobMetric==='replyRate'){
+   const parts=valid.filter(r=>r.replyRate!=null&&Number(r.messaged)>0);
+   const denominator=parts.reduce((a,r)=>a+Number(r.messaged),0);
+   return denominator?parts.reduce((a,r)=>a+Number(r.replyRate)*Number(r.messaged),0)/denominator:null;
+  }
+  if(cobMetric==='engagementRate'){
+   const parts=valid.filter(r=>r.engaged!=null&&Number(r.messaged)>0);
+   const denominator=parts.reduce((a,r)=>a+Number(r.messaged),0);
+   return denominator?parts.reduce((a,r)=>a+Number(r.engaged),0)/denominator:null;
+  }
+  if(cobMetric==='efficiency'){
+   const parts=valid.filter(r=>r.influenced!=null&&Number(r.messaged)>0);
+   const denominator=parts.reduce((a,r)=>a+Number(r.messaged),0);
+   return denominator?parts.reduce((a,r)=>a+Number(r.influenced),0)/denominator*100:null;
+  }
+  const parts=rows.filter(r=>r[cobMetric]!=null&&Number.isFinite(Number(r[cobMetric])));
+  return parts.length?parts.reduce((a,r)=>a+Number(r[cobMetric]),0):null;
+ }
+ const results=selections.map(p=>({ ...p,byDealer:names.map(name=>({name,value:figure(records(p,name))})),value:figure(names.flatMap(name=>records(p,name))),covered:p.months.filter(m=>names.some(name=>(db[m]?.[cobKind]||[]).some(r=>r.location===name))).length}));
+ const all=results.flatMap(p=>p.byDealer.map(r=>r.value)).filter(v=>v!=null&&Number.isFinite(v));
+ const maximum=isPct?1:Math.max(1,...all)*1.08;
+ const draw=(v,name)=>{if(v==null)return '<div class="cob-missing">No data</div>';const pct=Math.min(100,Math.max(0,v/maximum*100)),c=ovColor(name);return isRate?`<div class="cob-stem" style="width:${pct}%;--cob-color:${c}"></div><div class="cob-dot" style="left:${Math.min(99,Math.max(1,pct))}%;--cob-color:${c}"></div>`:`<div class="cob-fill" style="width:${pct}%;--cob-color:${c}"></div>`};
+ const valuesFor=name=>results.map(p=>({label:p.label,value:p.byDealer.find(r=>r.name===name)?.value??null}));
+ const ranking=names.map(name=>({name,value:results.length?results[results.length-1].byDealer.find(r=>r.name===name)?.value??null:null}));
+ ranking.sort((a,b)=>cobSort==='alpha'?a.name.localeCompare(b.name):cobSort==='asc'?(a.value??Infinity)-(b.value??Infinity):(b.value??-Infinity)-(a.value??-Infinity));
+ const namesSorted=ranking.map(r=>r.name);
+ const chartRow=(name,label,value)=>`<div class="cob-pair" title="${safe(name+' · '+label+' · '+obFmt(value,cobMetric))}"><span class="cob-pair-name" style="--cob-color:${ovColor(name)}"><i></i>${safe(label)}</span><div class="cob-track">${draw(value,name)}</div><span class="cob-value">${obFmt(value,cobMetric)}</span></div>`;
+ const entry=(title,rows)=>`<div class="cob-entry"><div class="cob-entry-head"><span>${safe(title)}</span></div>${rows}</div>`;
+ const chart=cobLayout==='dealer'?namesSorted.map(name=>entry(name,valuesFor(name).map(p=>chartRow(name,p.label,p.value)).join(''))).join(''):results.map(p=>entry(p.label,namesSorted.map(name=>chartRow(name,name,p.byDealer.find(r=>r.name===name)?.value??null)).join(''))).join('');
+ const cards=results.map((p,i)=>{const previous=i?results[i-1].value:null,delta=i?cobDelta(previous,p.value,cobMetric):['Base period',''];return `<div class="cob-card"><small>${safe(p.label)}</small><strong>${obFmt(p.value,cobMetric)}</strong><div class="cob-change ${delta[1]}">${safe(delta[0])}</div></div>`}).join('');
+ const opts=keys.map(k=>`<option value="${k}" ${k===cobMetric?'selected':''}>${safe(OB_METRICS[k][0])}</option>`).join('');
+ const notices=results.filter(p=>p.months.length>1&&p.covered<p.months.length).map(p=>`${p.label} (${p.covered}/${p.months.length} months)`);
+ return `<section class="cob"><div class="cob-head"><div><h2>Automations &amp; Broadcasts Performance</h2><p>Uses the months/quarters and dealerships selected above; locations are never combined in the chart.</p></div><div class="cob-tabs" role="group" aria-label="Outreach type">${[['automations','Automations'],['broadcasts','Broadcasts']].map(([k,label])=>`<button type="button" class="${cobKind===k?'active':''}" aria-pressed="${cobKind===k}" onclick="cobKind='${k}';cobMetric='influenced';render()">${label}</button>`).join('')}</div></div><div class="cob-controls"><label>Compare metric<select aria-label="Outreach comparison metric" onchange="cobMetric=this.value;render()">${opts}</select></label><label>Group results<select aria-label="Group outreach comparison" onchange="cobLayout=this.value;render()"><option value="dealer" ${cobLayout==='dealer'?'selected':''}>By dealership</option><option value="period" ${cobLayout==='period'?'selected':''}>By period</option></select></label><label>Sort dealerships<select aria-label="Outreach comparison sort" onchange="cobSort=this.value;render()"><option value="desc" ${cobSort==='desc'?'selected':''}>Highest first</option><option value="asc" ${cobSort==='asc'?'selected':''}>Lowest first</option><option value="alpha" ${cobSort==='alpha'?'selected':''}>A–Z</option></select></label></div><div class="cob-cards">${cards}</div><div class="cob-chartpanel"><div class="cob-chart-title">${safe(OB_METRICS[cobMetric][0])} by ${cobLayout==='dealer'?'dealership':'period'}</div><p class="cob-help">${isRate?'Dot / lollipop view':'Horizontal bar view'} selected automatically. Hover for exact values; missing data is not zero.</p>${all.length?`<div class="cob-rows">${chart}</div><div class="cob-axis"><span>0${isPct?'%':''}</span><span>${isPct?'100%':obFmt(maximum,cobMetric)}</span></div><div class="cob-legend">${namesSorted.map(n=>`<span style="--cob-color:${ovColor(n)}"><i></i>${safe(n)}</span>`).join('')}</div>`:'<div class="cob-missing">No outreach reports are available for these periods and dealerships.</div>'}</div>${notices.length?`<div class="cob-note"><b>Partial data:</b> ${safe(notices.join('; '))}. Rates use available months only.</div>`:''}<div class="cob-note">Reporting: reply rates are weighted by customers messaged; engagement rate is engaged ÷ messaged. Influenced appointments are not necessarily directly booked appointments. Customers and appointments can overlap across outreach types. Period cards sum selected locations for counts and use weighted rates where denominators are available.</div></section>`;
 }
 
 // Outreach reporting uses independent monthly sources. Missing dealership rows are not zero.
